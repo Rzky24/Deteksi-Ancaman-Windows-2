@@ -68,7 +68,7 @@ Jawaban yang Benar
 
 # mendeteksi penemuan 
 Penemuan melalui CMD
-Penemuan melalui baris perintah adalah metode yang paling umum dan termudah yang tersedia bagi pelaku ancaman. Hal ini karena metode ini hanya menggunakan perintah yang sudah ada seperti "whoami" atau "ipconfig" yang tersedia di semua mesin Windows secara default; lihat  artikel ini untuk contoh serangan di dunia nyata. Untungnya bagi pihak yang bertahan, sebagian besar perintah yang dijalankan dicatat sebagai proses baru, seperti pada pohon proses di bawah ini:
+Penemuan melalui baris perintah adalah metode yang paling umum dan termudah yang tersedia bagi pelaku ancaman. Hal ini karena metode ini hanya menggunakan perintah yang sudah ada seperti "whoami" atau "ipconfig" yang tersedia di semua mesin Windows secara default; lihat  artikel ini :https://thedfirreport.com/2024/08/26/blacksuit-ransomware/#collection:~:text=The%20threat%20actor%20performed%20several%20discovery%20commands untuk contoh serangan di dunia nyata. Untungnya bagi pihak yang bertahan, sebagian besar perintah yang dijalankan dicatat sebagai proses baru, seperti pada pohon proses di bawah ini:
 
 Perintah Penemuan yang Berasal dari "invoice.pdf.exe"
 C:\Users\victim\Downloads\invoice.pdf.exe
@@ -107,12 +107,19 @@ C:\Users\Administrator\Desktop\ Practice\Task 3\invoice.pdf.exe
 Jawablah pertanyaan-pertanyaan di bawah ini.
 Berdasarkan log Sysmon, apa perintah pertama yang dijalankan oleh invoice.pdf.exe?
 
-whoami
+C:\Users\victim\Downloads\invoice.pdf.exe
+├── C:\Windows\System32\cmd.exe
+│   ├── ipconfig                                 // Show network settings
+│   ├── whoami /priv     
+
+jawaban : whoami
 
 Jawaban yang Benar
 Perintah apa yang digunakan malware untuk memeriksa keberadaan MS Defender EDR?
 
-cmd /c "tasklist /v | findstr MsSense.exe || echo No MS Defender EDR"
+Filter untuk ID Acara 4688: Pembuatan Proses
+
+jawaban : cmd /c "tasklist /v | findstr MsSense.exe || echo No MS Defender EDR"
 
 Jawaban yang Benar
 Ke domain mana malware tersebut mengirimkan data yang ditemukan?
