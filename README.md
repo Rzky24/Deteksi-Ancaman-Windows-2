@@ -45,17 +45,28 @@ Jawablah pertanyaan-pertanyaan di bawah ini.
 Buka CMD dan ketik "net user Administrator".
 Pengguna tersebut termasuk dalam grup hak akses apa?
 
-Administrators
+cara ketik cmd di lab : net user administrator - lihat group 
+
+Local Group Memberships      *Administrators
+Global Group memberships     *None
+The command completed successfully.
+
+jawaban : Administrators
 
 Jawaban yang Benar
 Buka Event Viewer dan coba temukan perintah Anda di log Sysmon.
 Apa isi kolom "Image" dari perintah net yang baru saja Anda jalankan?
 
-C:\Windows\System32\net.exe
+Cari di Bagian 'Log Aplikasi dan Layanan'. Cari 'Microsoft' > 'Windows' > 'Sysmon' > 'Operasional'.
+Ketik ID Acara 1 sebagai filter Anda
+<img width="1363" height="577" alt="image" src="https://github.com/user-attachments/assets/ebd213ee-24da-4594-bc68-6b0b6b3564e6" />
+
+
+jawaban : C:\Windows\System32\net.exe
 
 Jawaban yang Benar
 
-# 
+# mendeteksi penemuan 
 Penemuan melalui CMD
 Penemuan melalui baris perintah adalah metode yang paling umum dan termudah yang tersedia bagi pelaku ancaman. Hal ini karena metode ini hanya menggunakan perintah yang sudah ada seperti "whoami" atau "ipconfig" yang tersedia di semua mesin Windows secara default; lihat  artikel ini untuk contoh serangan di dunia nyata. Untungnya bagi pihak yang bertahan, sebagian besar perintah yang dijalankan dicatat sebagai proses baru, seperti pada pohon proses di bawah ini:
 
