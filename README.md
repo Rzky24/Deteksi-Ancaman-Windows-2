@@ -116,8 +116,11 @@ jawaban : whoami
 
 Jawaban yang Benar
 Perintah apa yang digunakan malware untuk memeriksa keberadaan MS Defender EDR?
+cara cepat - hpus / clear dulu log sysmon dan kemudian refres - tutjuanya agar tidak terlalu banyak event yang muncul 
+cara nya buka event viewer - di file sysmon - oprational - kemuadian  buka dan jalankan file tugas 3 di file  paraktik - invvoice.exe - klik 2 kali lalu muncul cmd dan berisi keterangan malware - hpus / clear log sysmon  event dulu dan refres lagi - lihst id 1 - lihst pula waktu saat menjalan kan nya - agar bisa tau langsung kapan terjadinya - lihat hasil di general event viewer 
 
-Filter untuk ID Acara 4688: Pembuatan Proses
+<img width="1344" height="656" alt="image" src="https://github.com/user-attachments/assets/77ea2b88-2758-47d4-bfe5-c75831ef3025" />
+
 
 jawaban : cmd /c "tasklist /v | findstr MsSense.exe || echo No MS Defender EDR"
 
