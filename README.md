@@ -126,8 +126,25 @@ jawaban : cmd /c "tasklist /v | findstr MsSense.exe || echo No MS Defender EDR"
 
 Jawaban yang Benar
 Ke domain mana malware tersebut mengirimkan data yang ditemukan?
+cara buka wevent viewer - clear dulu log di eventviewer nya tujuan nya agar log yang baru bisa ke baca - buka task 3 di vm yang tersedia - akan muncul runing discovery the victim is a local admin - lalu refes di event viewer - kita cari event id 22 Dns query ( rule DnsQuery ) - lihat detail maka kita akan tau hasil yang kita cari - exfil.beecz.cafe
 
-exfil.beecz.cafe
+kira kira berisi seperti di bawah ini :
+EventData 
+
+  RuleName - 
+  UtcTime 2026-02-22 12:47:10.987 
+  ProcessGuid {c5d2b969-faca-699a-f400-000000001c01} 
+  ProcessId 4528 
+  QueryName exfil.beecz.cafe 
+  QueryStatus 0 
+  QueryResults type: 5 d1p8wy03pdo243.cloudfront.net; 
+
+
+<img width="1359" height="645" alt="image" src="https://github.com/user-attachments/assets/00f2875d-4db4-40a9-b067-0dfda5516952" />
+
+
+jawaban : exfil.beecz.cafe
+
 
 Jawaban yang Benar
 
@@ -164,20 +181,30 @@ Untuk tugas ini, lanjutkan dengan VM yang terlampir dan coba temukan data yang p
 Jawablah pertanyaan-pertanyaan di bawah ini.
 Apa kata sandi Facebook yang disimpan pengguna di Chrome?
 (Menu Chrome > Kata Sandi dan isi otomatis > Pengelola Kata Sandi)
+caranya : buka google crome - pilih menu titik tiga pojok kanan - password and autofill - google passwor manager - pilih facebook - lalu kita di suru memasukAN KEY/SANDI sandi nya dan sandi nya sudah ada di mesin vm ya itu Secure! - dan kita cari passwordnya -  nsAghv51BBav90!
 
-nsAghv51BBav90!
+
+<img width="1353" height="483" alt="image" src="https://github.com/user-attachments/assets/7de3ce5b-4627-4da5-a41f-3abc35fe9d0c" />
+
+
+
+jawaban : nsAghv51BBav90!
 
 Jawaban yang Benar
 Kunci SSH menarik mana yang disimpan pengguna di disk?
 (Mulailah pencarian Anda dari C:\Users\Administrator\)
 
-thm-access-database.key
+cara nya buka local disk C - User - Adiministrator - pilih thm-access-database.key
+
+jawaban : thm-access-database.key
 
 Jawaban yang Benar
 Apa isi file PDF rahasia yang menjelaskan jaringan internal TryHackMe?
 (Cari file tersebut di Desktop, Unduhan, dan Dokumen)
 
-thm-network-diagram-2025.pdf
+buka file exploler pilih Desktop - pilih Download - thm-access-database.key
+
+jawaban : thm-network-diagram-2025.pdf
 
 Jawaban yang Benar 
 
@@ -212,19 +239,56 @@ C:\Users\Administrator\Desktop\Practice\Task 5\stealer.exe
 
 Jawablah pertanyaan-pertanyaan di bawah ini.
 Berdasarkan log Sysmon, direktori apa yang dibuat oleh program pencuri data tersebut?
+cara nya : buka event view hapus dulu log / clear log di file sysmon windows - buka task 5 di vm yang sudah tersedia - refres kembali agar log terbaru bisa di baca event viewer - kemudian cari proses event id 1 yaitu proses create - lihat detail - lihat di bagian CommandLine -  dan akan muncul hasil yang kita cari 
+CommandLine cmd /c "xcopy %%userprofile%%\.aws %%temp%%\staging_58f1\aws /i /y" 
 
-staging_58f1
+jawaban : staging_58f1
 
 Jawaban yang Benar
 Tiga ekstensi file apa yang dicari oleh malware tersebut?
 Format: Pisahkan dengan koma sesuai urutan abjad (misalnya bat, txt)
 
-docx, pdf, xlsx
+cara nya : bisa di lihat di isi detai file stealer exe  yang kita klik
+
+seperti di bawah ini : 
+
+2. Stealing Docs from Desktop
+=======================================
+File not found - *.docx
+0 File(s) copied
+File not found - *.pdf
+0 File(s) copied
+File not found - *.xlsx
+0 File(s) copied
+
+<img width="1234" height="526" alt="image" src="https://github.com/user-attachments/assets/06410c85-a03e-4e2f-8899-4cc9a1f09ae9" />
+
+
+jawaban : docx, pdf, xlsx
 
 Jawaban yang Benar
-Cmdlet PowerShell mana yang digunakan malware untuk mendapatkan konten clipboard?
 
-Get-ClipBoard
+Cmdlet PowerShell mana yang digunakan malware untuk mendapatkan konten clipboard?
+cari di event viewer - proses create - event id 1 PowerShell.exe  - lihat di bagian Commandline - 
+
+berikut isi nya seperti di bawah ini :
+
+EventData 
+
+  RuleName - 
+  UtcTime 2026-02-22 13:43:18.898 
+  ProcessGuid {c5d2b969-07f6-699b-4102-000000001c01} 
+  ProcessId 4780 
+  Image C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe 
+  FileVersion 10.0.17763.1 (WinBuild.160101.0800) 
+  Description Windows PowerShell 
+  Product Microsoft® Windows® Operating System 
+  Company Microsoft Corporation 
+  OriginalFileName PowerShell.EXE 
+  CommandLine powershell -c "Get-ClipBoard > $env:Temp\staging_58f1\clipboard.txt" 
+
+
+jawaban : Get-ClipBoard
 
 Jawaban yang Benar
 Ke domain mana malware tersebut mengirimkan data?
