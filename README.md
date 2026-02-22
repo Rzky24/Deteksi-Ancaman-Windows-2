@@ -293,6 +293,10 @@ jawaban : Get-ClipBoard
 Jawaban yang Benar
 Ke domain mana malware tersebut mengirimkan data?
 
+caranya : lihat id 22 sysmon di event viewer - lihat di bagian Dns Query - lihat di Nama Query nya  
+
+QueryName collecteddata-storage-2025.s3.amazonaws.com 
+
 collecteddata-storage-2025.s3.amazonaws.com
 
 Jawaban yang benar 
